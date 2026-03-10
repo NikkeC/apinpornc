@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performing — Apinporn Chaiwanichsiri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .perf-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .perf-sub-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .perf-sub-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .perf-item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 1.2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .perf-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--gold);
+      padding-top: 0.1rem;
+    }
+
+    .perf-role {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .perf-ensemble {
+      font-size: 0.82rem;
+      color: var(--gold-light);
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+
+    .perf-location {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* MT cards */
+    .mt-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border-soft);
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 1rem;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .mt-card:hover {
+      background: rgba(201,168,76,0.04);
+      border-color: var(--gold-dim);
+    }
+
+    .mt-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .mt-role { font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 0.2rem; }
+    .mt-production { font-size: 0.85rem; color: var(--gold-light); font-style: italic; margin-bottom: 0.2rem; }
+    .mt-company { font-size: 0.78rem; color: var(--text-muted); }
+    .mt-director { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin-top: 0.2rem; }
+
+    /* Highlights box */
+    .highlights-box {
+      background: rgba(201,168,76,0.04);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .highlights-title {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 0.83rem;
+    }
+
+    .highlight-date {
+      font-weight: 500;
+      color: var(--gold-light);
+      white-space: nowrap;
+      min-width: 80px;
+    }
+
+    .highlight-event { color: var(--text-muted); }
+
+    .festivals-box {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-soft);
+      padding: 1.5rem 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .festival-item {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 900px) {
+      .perf-two-col { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav-logo">
+    Apinporn Chaiwanichsiri
+    <span>อภิญญ์พร ชัยวานิชศิริ</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="performing.html">Performing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="page-banner" data-title="Perform">
+    <div class="page-eyebrow">On Stage</div>
+    <h1 class="page-title"><em>Performing</em> Experience</h1>
+    <p class="page-subtitle">Choral, musical theatre, and concert highlights across Thailand, Australia, Singapore, China, and the United States.</p>
+  </div>
+
+  <section class="section">
+    <div class="perf-two-col">
+      <!-- CHORAL -->
+      <div>
+        <div class="perf-sub-label">Voice</div>
+        <div class="perf-sub-title">Choral Experience</div>
+        <div id="choral-list"></div>
+
+        <div class="highlights-box">
+          <div class="highlights-title">Selected Concert Highlights</div>
+          <div id="highlights-list"></div>
+        </div>
+
+        <div class="festivals-box">
+          <div class="highlights-title" style="margin-bottom:1rem;">Festivals & Camps</div>
+          <div id="festivals-list"></div>
+        </div>
+      </div>
+
+      <!-- MUSICAL THEATRE -->
+      <div>
+        <div class="perf-sub-label">Theatre</div>
+        <div class="perf-sub-title">Musical Theatre</div>
+        <div id="mt-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-name">Apinporn (Nikke') Chaiwanichsiri</div>
+    <div class="footer-copy">© 2025 · Bangkok, Thailand</div>
+    <a href="admin/index.html" class="footer-admin">Admin ↗</a>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const p = SITE_DATA.performing;
+
+  // Choral
+  document.getElementById('choral-list').innerHTML = p.choral.map(c => `
+    <div class="perf-item reveal">
+      <div class="perf-year">${c.years}</div>
+      <div>
+        <div class="perf-role">${c.role}</div>
+        <div class="perf-ensemble">${c.ensemble}</div>
+        <div class="perf-location">${c.location}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Highlights
+  document.getElementById('highlights-list').innerHTML = p.choral_highlights.map(h => `
+    <div class="highlight-item">
+      <span class="highlight-date">${h.date}</span>
+      <span class="highlight-event">${h.event}</span>
+    </div>
+  `).join('');
+
+  // Festivals
+  document.getElementById('festivals-list').innerHTML = p.festivals.map(f => `
+    <div class="festival-item">${f}</div>
+  `).join('');
+
+  // Musical Theatre
+  document.getElementById('mt-list').innerHTML = p.musical_theatre.map(m => `
+    <div class="mt-card reveal">
+      <div class="mt-year">${m.year}</div>
+      <div>
+        <div class="mt-role">${m.role}</div>
+        <div class="mt-production">${m.production}</div>
+        <div class="mt-company">${m.company}</div>
+        ${m.director ? `<div class="mt-director">${m.director}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+});
+</script>
+</body>
+</html>

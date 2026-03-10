@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Apinporn Chaiwanichsiri</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav-logo">
+    Apinporn Chaiwanichsiri
+    <span>อภิญญ์พร ชัยวานิชศิริ</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="performing.html">Performing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page">
+  <div class="page-banner" data-title="Experience">
+    <div class="page-eyebrow">Professional Journey</div>
+    <h1 class="page-title"><em>Teaching</em> & Experience</h1>
+    <p class="page-subtitle">Over a decade of teaching experience across universities, international schools, and private studios in Thailand, Australia, and the United States.</p>
+  </div>
+
+  <section class="section">
+    <div class="tabs-wrapper" data-tabs>
+      <div class="tabs anim-fade-up anim-delay-1">
+        <button class="tab-btn active" data-tab="university">University</button>
+        <button class="tab-btn" data-tab="vocal">Vocal Teaching</button>
+        <button class="tab-btn" data-tab="choral">Choral</button>
+        <button class="tab-btn" data-tab="other">Other Professional</button>
+      </div>
+
+      <div class="tab-panel active" data-panel="university">
+        <div id="exp-university"></div>
+      </div>
+      <div class="tab-panel" data-panel="vocal">
+        <div id="exp-vocal"></div>
+      </div>
+      <div class="tab-panel" data-panel="choral">
+        <div id="exp-choral"></div>
+      </div>
+      <div class="tab-panel" data-panel="other">
+        <div id="exp-other"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-name">Apinporn (Nikke') Chaiwanichsiri</div>
+    <div class="footer-copy">© 2025 · Bangkok, Thailand</div>
+    <a href="admin/index.html" class="footer-admin">Admin ↗</a>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const categories = ['university', 'vocal', 'choral', 'other'];
+  categories.forEach(cat => {
+    renderTimeline(SITE_DATA.experience[cat], `exp-${cat}`);
+  });
+});
+</script>
+</body>
+</html>
