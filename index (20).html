@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apinporn (Nikke') Chaiwanichsiri — Music Educator</title>
+  <meta name="description" content="Personal website of Apinporn Chaiwanichsiri — Music Educator, Researcher, Vocal Teacher & Performer at PGVIM, Bangkok.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── HOME-SPECIFIC ─────────────────────────────────── */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 3rem 3.5rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.04) 50%, rgba(26,48,80,0.4) 100%);
+      pointer-events: none;
+    }
+
+    /* Left */
+    .hero-left { position: relative; z-index: 2; }
+
+    .hero-greeting {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .hero-greeting::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-name-thai {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.85rem 2rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      border: 1px solid var(--gold-dim);
+      padding: 0.85rem 2rem;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Right */
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-portrait {
+      position: relative;
+      background: linear-gradient(140deg, var(--navy-soft) 0%, var(--navy-light) 100%);
+      border: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-portrait::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .portrait-monogram {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 40px rgba(201,168,76,0.2);
+    }
+
+    .portrait-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .portrait-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .portrait-divider {
+      width: 40px; height: 1px;
+      background: var(--border);
+      margin: 1.5rem auto;
+    }
+
+    .portrait-institution {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Stats row */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .stat-box {
+      background: rgba(13,27,42,0.7);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* Quick nav cards */
+    .quick-nav {
+      padding: 4rem 3.5rem;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .quick-nav-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .quick-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .qnav-card {
+      background: rgba(13,27,42,0.6);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .qnav-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .qnav-card:hover { background: rgba(201,168,76,0.05); }
+    .qnav-card:hover::after { transform: scaleX(1); }
+
+    .qnav-icon {
+      font-size: 1.5rem;
+      filter: grayscale(1) opacity(0.7);
+      transition: filter 0.2s;
+    }
+
+    .qnav-card:hover .qnav-icon { filter: none; }
+
+    .qnav-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+
+    .qnav-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .qnav-arrow {
+      font-size: 0.8rem;
+      color: var(--gold-dim);
+      margin-top: auto;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .qnav-card:hover .qnav-arrow { color: var(--gold); transform: translateX(4px); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem 3rem; text-align: center; }
+      .hero-greeting { justify-content: center; }
+      .hero-roles { justify-content: center; }
+      .hero-desc { max-width: 100%; }
+      .hero-ctas { justify-content: center; }
+      .quick-nav { padding: 3rem 1.5rem; }
+      .quick-nav-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 500px) {
+      .quick-nav-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <a href="index.html" class="nav-logo">
+    Apinporn Chaiwanichsiri
+    <span>อภิญญ์พร ชัยวานิชศิริ</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="performing.html">Performing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-menu-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="page">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-greeting anim-fade-up anim-delay-1">Music Educator &amp; Researcher</div>
+      <h1 class="hero-name anim-fade-up anim-delay-2">
+        Apinporn<br>
+        <em style="font-style:italic; color:var(--gold-light)">Nikke'</em><br>
+        Chaiwanichsiri
+      </h1>
+      <div class="hero-name-thai anim-fade-up anim-delay-3">อภิญญ์พร ชัยวานิชศิริ</div>
+      <div class="hero-roles anim-fade-up anim-delay-3">
+        <span class="tag tag-gold">Vocal Teacher</span>
+        <span class="tag tag-gold">Performer</span>
+        <span class="tag tag-gold">Choral Director</span>
+        <span class="tag tag-gold">Researcher</span>
+        <span class="tag tag-gold">PhD</span>
+      </div>
+      <p class="hero-desc anim-fade-up anim-delay-4">
+        Full-time Lecturer at the Princess Galyani Vadhana Institute of Music (PGVIM), Bangkok.
+        PhD in Music Education from the University of Missouri.
+        Dedicated to cultivating musical excellence at the intersection of voice, theatre, and pedagogy.
+      </p>
+      <div class="hero-ctas anim-fade-up anim-delay-5">
+        <a href="about.html" class="btn-primary">About Me →</a>
+        <a href="contact.html" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right anim-fade-up anim-delay-3">
+      <div class="hero-portrait">
+        <div class="portrait-monogram">AN</div>
+        <div class="portrait-name">Apinporn (Nikke')</div>
+        <div class="portrait-title">Music Educator · Researcher · Performer</div>
+        <div class="portrait-divider"></div>
+        <div class="portrait-institution">
+          Lecturer, PGVIM<br>
+          Princess Galyani Vadhana Institute of Music<br>
+          Bangkok, Thailand
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-box">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Years Teaching</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Degrees</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAV -->
+  <div class="quick-nav">
+    <div class="quick-nav-label">Explore</div>
+    <div class="quick-nav-grid">
+      <a href="about.html" class="qnav-card">
+        <div class="qnav-icon">🎓</div>
+        <div class="qnav-title">About & CV</div>
+        <div class="qnav-desc">Biography, education, and full curriculum vitae</div>
+        <div class="qnav-arrow">→</div>
+      </a>
+      <a href="experience.html" class="qnav-card">
+        <div class="qnav-icon">📚</div>
+        <div class="qnav-title">Experience</div>
+        <div class="qnav-desc">Teaching, choral directing, and professional work</div>
+        <div class="qnav-arrow">→</div>
+      </a>
+      <a href="research.html" class="qnav-card">
+        <div class="qnav-icon">📝</div>
+        <div class="qnav-title">Research</div>
+        <div class="qnav-desc">Publications, presentations, and scholarly writing</div>
+        <div class="qnav-arrow">→</div>
+      </a>
+      <a href="performing.html" class="qnav-card">
+        <div class="qnav-icon">🎭</div>
+        <div class="qnav-title">Performing</div>
+        <div class="qnav-desc">Choral, musical theatre, and concert highlights</div>
+        <div class="qnav-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-name">Apinporn (Nikke') Chaiwanichsiri</div>
+    <div class="footer-copy">© 2025 · Bangkok, Thailand</div>
+    <a href="admin/index.html" class="footer-admin">Admin ↗</a>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
